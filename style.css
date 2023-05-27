@@ -46,19 +46,55 @@ body {
   
   .input-container {
     margin-bottom: 20px;
+    display: flex;
+    gap:1rem;
+    text-align: center;
+    align-items: center;
   }
   
   .input-container label {
     display: block;
     margin-bottom: 5px;
+    font-size: 1.2rem;
+    background-color: rgb(68, 68, 230);
+    padding:6px 20px;
+    color: white;
   }
   
   .input-container input {
     padding: 5px;
     width: 100px;
   }
-  
+
+  table, th ,tr, td ,thead {
+    border:1px solid grey;
+    border-collapse: collapse;
+  }
+  td {
+    height:1rem;
+    width:1rem;
+  }
   .green-background {
     background-color: green;
   }
   
+  #month {
+    border: 1px solid black;
+    outline: none;
+    background-color: white;
+    padding:5px;
+    
+  }
+
+  #year {
+    border: 1px solid black;
+    outline: none;
+    background-color: white;
+    padding:6px;
+  }
+
+  #date-input {
+    padding:0.5rem;
+  }
+
+ 
