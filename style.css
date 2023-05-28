@@ -12,9 +12,10 @@ body {
   .container {
     text-align: center;
     background-color: #fff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width:35vw;
   }
   
   h1 {
@@ -23,6 +24,10 @@ body {
   
   .select-container {
     margin-bottom: 20px;
+    display: flex;
+    gap:1rem;
+    justify-content: center;
+    align-items: center;
   }
   
   .calendar-container {
@@ -52,13 +57,14 @@ body {
     align-items: center;
   }
   
-  .input-container label {
+  .input-container button {
     display: block;
     margin-bottom: 5px;
     font-size: 1.2rem;
     background-color: rgb(68, 68, 230);
     padding:6px 20px;
     color: white;
+    border: transparent;
   }
   
   .input-container input {
@@ -76,6 +82,7 @@ body {
   }
   .green-background {
     background-color: green;
+    color: #fff;
   }
   
   #month {

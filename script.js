@@ -3,6 +3,7 @@ const monthSelect = document.getElementById("month");
 const yearSelect = document.getElementById("year");
 const calendarBody = document.querySelector("#calendar tbody");
 const dateInput = document.getElementById("date-input");
+const enterDate = document.getElementById('enter-date');
 
 const currentYear = new Date().getFullYear();
 const yearRange = 30; // Number of years to display in the dropdown
@@ -17,19 +18,20 @@ for (let i = startYear; i <= currentYear; i++) {
 monthSelect.addEventListener("change", generateCalendar);
 yearSelect.addEventListener("change", generateCalendar);
 dateInput.addEventListener("keydown", handleDateInput);
+enterDate.addEventListener('click',handleDate);
 
 generateCalendar();
 
 
 function generateCalendar() {
-  
+
   calendarBody.innerHTML = "";
 
- 
+
   const month = parseInt(monthSelect.value) - 1; // JavaScript months are 0-based
   const year = parseInt(yearSelect.value);
 
- 
+
   const date = new Date(year, month);
 
   // Get the number of days in the selected month
@@ -54,7 +56,7 @@ function generateCalendar() {
         // Empty cell after the last day of the month
         cell.textContent = "";
       } else {
-        
+
         cell.textContent = dateCount;
         dateCount++;
 
@@ -88,4 +90,19 @@ function handleDateInput(event) {
 
 function toggleCellBackground(event) {
   event.target.classList.toggle("green-background");
+}
+
+function handleDate(event){
+  const date = parseInt(dateInput.value);
+    if (!isNaN(date) && date >= 1 && date <= 31) {
+      const cells = document.querySelectorAll("#calendar td");
+      cells.forEach((cell) => {
+        const cellDate = parseInt(cell.textContent);
+        if (!isNaN(cellDate) && cellDate === date) {
+          cell.classList.toggle("green-background");
+        }
+      });
+      dateInput.value = "";
+    }
+
 }
